@@ -48,14 +48,14 @@ function AddTodo({mutate}: { mutate: KeyedMutator<Todo[]> }){
          required
          mb={12}
          label="Body"
-         placeholder="Tell me more.."
+         placeholder="Add a description..."
          {...form.getInputProps("body")}
         />
         <Button type= "submit">Create todo</Button>
     </form>
     </Modal>
     <Group position='center'>
-        <Button fullWidth mb={12} onClick={()=> setOpen(true)}>
+        <Button fullWidth mb={12} color='green' onClick={()=> setOpen(true)}>
             Add todo
         </Button>
     </Group>

@@ -35,8 +35,9 @@ function App() {
       margin: '0 auto',
     })}
     >
+      <h1 style={{textAlign: 'center'}}>{'Todo List'}</h1>
+      <AddTodo mutate={mutate}  />
       <List spacing="xs" size="sm" mb={12} center> 
-      <h1>{'Todo List'}</h1>
         {data?.map((todo)=> {
           return (
           <List.Item 
@@ -44,7 +45,7 @@ function App() {
             key={`todo_List__${todo.id}`}
             icon={
               todo.done ? (
-                 <ThemeIcon color='teal' size={24} radius='xl'>
+                 <ThemeIcon color='green' size={24} radius='xl'>
                  <CheckCircleFillIcon size= {20} />
               </ThemeIcon>
               ) : ( 
@@ -54,13 +55,14 @@ function App() {
             )
           }
           >
-            {todo.title}
+            <h2>{todo.title}</h2>
+            <p>{todo.body}</p>
             </List.Item>
           );  
         })}
       </List>
 
-    <AddTodo mutate={mutate}  />
+    
     </Box>
   )
 }
